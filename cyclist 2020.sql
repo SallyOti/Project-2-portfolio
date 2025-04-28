@@ -154,17 +154,6 @@ FROM (SELECT * FROM `cycling_table1.1`
 SELECT * FROM `cycling_table1.2`) AS Union_table;
 
 
-
-
-
-
-
-
-
-
-
-
-
 CREATE TABLE `cycling_table2` (
   `trip_id` int DEFAULT NULL,
   `start_time` text,
@@ -179,9 +168,6 @@ FROM cycling_table2;
 INSERT INTO cycling_table2
 SELECT *,ROW_NUMBER() OVER(PARTITION BY trip_id) AS row_num
 FROM current_table;
-
-
-
 
 
 
